@@ -18,10 +18,7 @@ export default function TodoSection(props: TodoSectionProps) {
   return (
     <div className="flex flex-wrap justify-center h-screen">
       <Columns columnName="To-Do" columnData={props.todoData.todo} />
-      <Columns
-        columnName="In Progress"
-        columnData={props.todoData.inprogress}
-      />
+      <Columns columnName="Progress" columnData={props.todoData.inprogress} />
       <Columns columnName="Done" columnData={props.todoData.done} />
     </div>
   );
@@ -33,7 +30,7 @@ const Columns = (props: ColumnsProps) => {
       className="w-full md:w-1/3 xl:w-1/3 p-6"
       style={{
         backgroundColor:
-          props.columnName === "In Progress" ? "#eec76b20" : "inherit",
+          props.columnName === "Progress" ? "#eec76b20" : "inherit",
       }}
     >
       <h2 className="text-2xl font-bold mb-4 text-slate-800">

@@ -14,7 +14,7 @@ export default function Home() {
     setIsOpen(false);
   };
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto">
       <TodoList />
       <button
         className="fixed bottom-4 right-4 bg-[#d34467] hover:bg-[#d3446795] text-white font-bold py-2 px-3 rounded-full"
