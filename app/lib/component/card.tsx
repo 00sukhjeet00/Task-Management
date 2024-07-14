@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 
 interface CardProps {
   title: string;
@@ -32,7 +33,7 @@ export function Card(props: CardProps) {
     >
       <div className="flex justify-between items-center">
         <h4 className="text-lg text-slate-900">{props.title}</h4>
-        <p className="text-xs text-slate-600">{props.date}</p>
+        <p className="text-xs text-slate-600">{moment().fromNow()}</p>
       </div>
       <div>
         <p className="text-sm text-slate-700">{props.description}</p>

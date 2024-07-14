@@ -17,10 +17,10 @@ export default function Home() {
     <div className="container mx-auto px-4">
       <TodoList />
       <button
-        className="fixed bottom-4 right-4 bg-[#d34467] hover:bg-[#d3446795] text-white font-bold py-2 px-4 rounded"
+        className="fixed bottom-4 right-4 bg-[#d34467] hover:bg-[#d3446795] text-white font-bold py-2 px-3 rounded-full"
         onClick={handleOpenModal}
       >
-        +
+        <i className="fa-solid fa-plus fa-lg"></i>
       </button>
       <Modal isOpen={isOpen} onClose={handleCloseModal} />
     </div>
