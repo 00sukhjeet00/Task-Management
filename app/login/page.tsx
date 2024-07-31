@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,17 +14,18 @@ export default function login() {
   };
 
   const onSubmit = async (email: string, password: string) => {
-    // Replace this with your login logic, e.g., calling an API
+
     const response = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    });
+    }) as any;
 
     if (response.ok) {
-      // router.push("/");
+      localStorage.setItem('token',response.token)
+      router.push("/");
     } else {
       alert("Login failed. Please check your credentials and try again.");
     }

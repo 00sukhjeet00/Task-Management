@@ -2,8 +2,9 @@
 import { useState } from "react";
 import TodoList from "./lib/component/TodoList";
 import Modal from "./lib/component/Modal";
+import {ProtectRoute} from '@/app/lib/component/routeProtection'
 
-export default function Home() {
+function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -26,3 +27,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default ProtectRoute(Home)
